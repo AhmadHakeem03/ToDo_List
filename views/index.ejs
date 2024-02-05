@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <ul>
+           <a href="/school"><li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAR5JREFUSEvtlt0NwjAMhO8mQGIB2AQ2gVdYAlgCXmET2AQWQGICE6O2ipL+uCVVQZC3VrG/nnN2Qwy0OBAXpWAR2ab8IJJRviqwJAZHnM8Cq1oROQOYAbiQnLepgCW20lyW4KqPscS2AovIEsAUwJXkMatM2bvGarUFRwnL1PWheBiw1WDJFfcCFpERgAWAcQZQ00z8dupgrpsz48uEAO4ATiQf+lCYS0RWAPYlqoo+thrJ2xemW5M8hGCdp5uewbt8bvuKG8EdzjgM+UKwOz+d2+HsPrt5rj3+WjVn3F1x9q8OvVAk/IMDd31Hqf3powLUWHpB8NfFvS/M5X6b+dR7q52s7WvZ16rUloTWPTHYGplq32dd6FOpqsvze4qf5CghLmkxraoAAAAASUVORK5CYII=" class = "school" />school</li></a>
+           <a href="/today"><li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAm9JREFUSEvVlktvjVEUhp83LpEYtDOJkRFDIkTcFUmLthEMSYwkfoGRYOIfGJiZmamgxC0ucRchEoOOVMJUmpBQt9dZzT71+Xq+fvucVE7sybnstdez11p7XUSXlrrEpSOw7WXA4XTpc5LG2zWgU/A24E6C9Um6+/+DbW8FeiRdKltju9Zi28PAhKT7rbzR0tW2twNXgPnAoKQbxcO2e4FV6b9XkiZK+/3AZeA7sFvSvTK8CrwTGAUWAl+BiOOTnDja3gJcBxYB34A9km5lgUPI9hAwAnwBBiQ9bB62HRdekX6PSXJhb2MBPCzpararC0oOAB8kPU6XCaXHgAjF4iT3GQiLTkt6nuQ2AEskxcVbrux0sn0UOAOVuf8LOCjpfE5IssC21wFhdZ38ZCM8KyWN1cHrFE2dt/2oEbf1dcrS/oikfXWy0+BUBqMUNtdUmtheGnGuU1TYD6sj/ydLaRci483yWgSfbBh3oqBgqhTajgf1oA1wiIa7X5cKTfx/SlJw/sTMdhV4baMIPGsTvEbSi1xwuLmVq3ui9LUBjtfdK+lTlqtnU2z7dsrdHP6opME6wdxXvTq5e16Nwh9RwyW9mRNwSqkjwNlZFP4EDs1JAbG9H3gv6WmCb2p8xiPcUbpANJTjkl4muciEKJkXqi5a6WrbEaeLqUnskjSdUraXA5Hfsd5KetcENN7DZuBa6k5DkuL7jJXbFvurGnpZY6ktRkttebYK3JcGgQWpn94sAjIGgQEgJpcYBAI8owDN5upo6FH6YpL4a2WOPnuBj22NPnWpkAOu05GVx51Y/K/A3Rno66zJ2e/I1TmK62R+A5TRES44OWk+AAAAAElFTkSuQmCC" class ="school"/> Today</li></a>
+        </ul>
+      </div>
+      <div class="list0">
+        <div class="list">
+            <div class="date">
+                <h1>Today is <%= new Date().getDate() %>th <%= new Date().getMonth() +1  %> </h1>
+            </div>
+            <form  class="input" action = "\today" method="POST">
+                <input type="text" class = "txt"  name = "fName">
+                <button type = "submit" name = "" class = "adding">+</button>
+            </form>
+        <hr>
+        <div class="AddingItems">
+            <% if(locals.tasks){ %>
+                
+            <% tasks.forEach(task => { %>
+                <div class="item">
+                    <li><%= task %></li>
+                    <label class="checkbox-container">
+                        <input class="custom-checkbox" checked="" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                
+              <% }); %>
+            <% }  %>    
+        </div>
+        </div>
+      </div>
+      <div class="animi"></div>
+    </div>
+  </body>
+</html>
